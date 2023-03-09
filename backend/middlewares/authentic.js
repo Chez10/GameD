@@ -14,3 +14,12 @@ exports.isAuthenticcatedUser= catchAsyncErrors(async (req,res,next) => {
     next()
 
 })
+
+exports.authRole = (... roles) =>{
+    return (req, res, next)=>{
+        if(!roles.includes(req.user.role)){
+            new ErrorHandler(`The role (${req.user.role}) is not abel to use this feature.`, 403)
+        }
+        next();
+    }
+}
