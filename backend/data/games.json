@@ -1,0 +1,114 @@
+[
+    {
+        "name" : "Minecraft",
+        "description" : "Minecraft is a 3-D computer game where players can build anything. The game which has been described as like an 'online Lego' involves building blocks and creating structures across different environments and terrains.",
+        "price" : "19.99",
+        "ratings" : 4.3,
+        "images" : [{
+            "public_id" : "v1678642438/811461b8d1cacf1f2da791b478dccfe2a55457780364c3d5a95fbfcdd4c3086f_ugx4u7",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678642438/811461b8d1cacf1f2da791b478dccfe2a55457780364c3d5a95fbfcdd4c3086f_ugx4u7.jpg"
+        }],
+        "category" : "Sandbox",
+        "seller" : "Mojang Studios",
+        "numOfReviews" : 15,
+        "reviews": []
+    },
+    {
+        "name" : "Call of Duty: Modern Warfare II",
+        "description" : "NEW GAMEPLAY INNOVATIONS. ALL-NEW GUN HANDLING. ADVANCED AI. MODERN WARFARE® II BRINGS YOU A GLOBAL CAMPAIGN, IMMERSIVE MULTIPLAYER COMBAT AND NARRATIVE-DRIVEN SPECIAL OPS.",
+        "price" : "69.99",
+        "ratings" : 4.4,
+        "images" : [{
+            "public_id" : "MWII-000-ARTREVEAL-TOUT_ekaynx",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678643742/MWII-000-ARTREVEAL-TOUT_ekaynx.jpg"
+        }],
+        "category" : "Shooters",
+        "seller" : "Infinity Ward",
+        "numOfReviews" : 5,
+        "reviews": []
+    },
+    {
+        "name" : "SMITE",
+        "description" : "Players control a god, goddess or other mythological figure and take part in team-based combat, using their abilities and tactics against other player-controlled gods and non-player-controlled minions",
+        "price" : "0.00",
+        "ratings" : 3.1,
+        "images" : [{
+            "public_id" : "maxresdefault_ztgvll",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678644769/maxresdefault_ztgvll.jpg"
+        }],
+        "category" : "Multiplayer online battle arena",
+        "seller" : "Hi Rez Studios",
+        "numOfReviews" : 12,
+        "reviews": []
+    },
+    {
+        "name" : "Elden Ring",
+        "description" : "An open-world role-playing adventure set in a ravaged place known as the Lands Between, where the destruction of the titular artefact has led to wars and chaos. You play a warrior tasked with restoring the ring and becoming ruler of a new kingdom.",
+        "price" : "69.99",
+        "ratings" : 4.9,
+        "images" : [{
+            "public_id" : "phvVT0qZfcRms5qDAk0SI3CM_kb3i2r",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678645386/phvVT0qZfcRms5qDAk0SI3CM_kb3i2r.jpg"
+        }],
+        "category" : "Role-playing",
+        "seller" : "FromSoftware Inc",
+        "numOfReviews" : 89,
+        "reviews": []
+    },
+    {
+        "name" : "EA Sports Fifa 23",
+        "description" : "FIFA 23 is a soccer video game published by Electronic Arts. It is the 29th and final installment in the FIFA series that is developed by EA Sports, and the final installment under the FIFA banner",
+        "price" : "59.99",
+        "ratings" : 3.2,
+        "images" : [{
+            "public_id" : "GU1vXFJpbzGYNV6UN3U0Cnnb_q7ubtu",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678645724/GU1vXFJpbzGYNV6UN3U0Cnnb_q7ubtu.jpg"
+        }],
+        "category" : "Sports",
+        "seller" : "EA Sports",
+        "numOfReviews" : 1034,
+        "reviews": []
+    },
+    {
+        "name" : "Tetris",
+        "description" : "The basic idea of the game is to move different shaped tiles as they descend on a screen, to form complete lines, subsequently earning points and advancing levels in the game.",
+        "price" : "0.00",
+        "ratings" : 4.7,
+        "images" : [{
+            "public_id" : "61M3rDwh4qL_wrvk9d",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678646191/61M3rDwh4qL_wrvk9d.png"
+        }],
+        "category" : "Puzzlers",
+        "seller" : "Sega",
+        "numOfReviews" : 2,
+        "reviews": []
+    },
+    {
+        "name" : "Star Wars Jedi: Fallen Order",
+        "description" : "Aided by a former Jedi Knight, a prickly pilot, and a fearless droid companion, you must escape the sinister machinations of the Imperial forces in this story driven adventure.",
+        "price" : "59.99",
+        "ratings" : 4.7,
+        "images" : [{
+            "public_id" : "220px-Cover_art_of_Star_Wars_Jedi_Fallen_Order_eg45lk",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678648632/220px-Cover_art_of_Star_Wars_Jedi_Fallen_Order_eg45lk.jpg"
+        }],
+        "category" : "Action-adventure",
+        "seller" : "Respawn Entertainments",
+        "numOfReviews" : 13,
+        "reviews": []
+    },
+    {
+        "name" : "Dead by Daylight",
+        "description" : "Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught, tortured and killed.",
+        "price" : "24.99",
+        "ratings" : 4.0,
+        "images" : [{
+            "public_id" : "EGS_DeadbyDaylight_BehaviourInteractive_S1_2560x1440-a32581cf9948a9a2e24b2ff15c1577c7_iamb7t",
+            "url" : "https://res.cloudinary.com/dgqzdyxor/image/upload/v1678649021/EGS_DeadbyDaylight_BehaviourInteractive_S1_2560x1440-a32581cf9948a9a2e24b2ff15c1577c7_iamb7t.jpg"
+        }],
+        "category" : "Horror",
+        "seller" : "Behaviour Interactive",
+        "numOfReviews" : 56,
+        "reviews": []
+    }
+]
