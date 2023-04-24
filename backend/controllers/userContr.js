@@ -4,6 +4,7 @@ const ErrorHandler = require("../utilities/errorHandler");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
 const crypto = require("crypto");
 const emailSend = require("../utilities/emailSend");
+const cloudinary = require('cloudinary')
 
 exports.regisU = catchAsyncErrors(async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -11,7 +12,7 @@ exports.regisU = catchAsyncErrors(async (req, res, next) => {
     name,
     email,
     password,
-    avatar: {
+    avatar: { //I think this photo needs to be edited
       public_id: "blank-profile-picture-973460_1280",
       url: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     },
@@ -48,9 +49,7 @@ exports.reqPassW = catchAsyncErrors(async (req, res, next) => {
   const resetToken = user.getResetPasswordToken();
   await user.save({ validateBeforeSave: false });
 
-  const resetUrl = `${req.protocol}://${req.get(
-    "host"
-  )}/api/v1/password/reset/${resetToken}`;
+  const resetUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
   const message = `Password reset token:\n\n${resetUrl}\n\nIf this is not you just ignore it.`;
 
   try {

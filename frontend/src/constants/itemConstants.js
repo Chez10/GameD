@@ -6,3 +6,9 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const GAME_INFO_REQUEST = "GAME_INFO_REQUEST";
 export const GAME_INFO_SUCCESS = "GAME_INFO_SUCCESS";
 export const GAME_INFO_FAIL = "GAME_INFO_FAIL";
+
+
+export const REVIEW_REQUEST = "REVIEW_REQUEST";
+export const REVIEW_SUCCESS = "REVIEW_SUCCESS";
+export const REVIEW_FAIL = "REVIEW_FAIL";
+export const REVIEW_RESET = "REVIEW_RESET";

@@ -24,7 +24,7 @@ router
   .delete(isAuthdU, roleAuth("admin"), deleteGame);
 
 router.route("/review").put(isAuthdU, itemReview);
-router.route("/review").get(isAuthdU, getItemReview);
-router.route("/review").delete(isAuthdU, deleteReview);
+router.route("/reviews").get(isAuthdU, getItemReview);
+router.route("/reviews").delete(isAuthdU, deleteReview);
 
 module.exports = router;

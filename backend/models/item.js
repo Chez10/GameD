@@ -22,11 +22,11 @@ const itemSchema = new mongoose.Schema({
   },
   images: [
     {
-      public_id: {
+      url: {
         type: String,
         required: true,
       },
-      url: {
+      play: {
         type: String,
         required: true,
       },
@@ -78,11 +78,11 @@ const itemSchema = new mongoose.Schema({
       },
     },
   ],
-  user: {
-    type: mongoose.Schema.ObjectId,
-    ref: "User",
-    required: true,
-  },
+  // user: {
+  //   type: mongoose.Schema.ObjectId,
+  //   ref: "User",
+  //   required: true,
+  // },
   // createdAt: {
   //   type: Date,
   //   default: Date.now,

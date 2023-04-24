@@ -24,15 +24,13 @@ exports.getGames = catchAsyncErrors(async (req, res, next) => {
   let items = await features.query;
   let filteredGamesCount = items.length;
 
-  setTimeout(() => {
-    res.status(200).json({
-      success: true,
-      gameCount,
-      gamesPerPage,
-      filteredGamesCount,
-      items,
-    });
-  }, 1000);
+  res.status(200).json({
+    success: true,
+    gameCount,
+    gamesPerPage,
+    filteredGamesCount,
+    items,
+  });
 });
 
 exports.singleGame = catchAsyncErrors(async (req, res, next) => {

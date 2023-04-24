@@ -1,14 +1,32 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import "../../App.css";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../actions/userActions";
+import { useNavigate } from "react-router-dom";
+import { removeItemInCart } from "../../actions/cartActions";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { cartItems } = useSelector((state) => state.cart);
+  const { user, loading } = useSelector((state) => state.auth);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
+  const checkoutHandler = () => {
+    navigate("/login");
+  };
+
   return (
     <Fragment>
       <nav className="navbar row">
         <div className="col-12 col-md-3">
-          <div className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img src="/images/gamed_logo.png" width="340" height="122" />
-          </div>
+          </Link>
         </div>
 
         <div className="col-12 col-md-6 mt-2 mt-md-0">
@@ -26,19 +44,71 @@ const Header = () => {
             </div>
           </div>
         </div>
+        {user ? (
+          <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <span id="cart" className="ml-3">
+                Cart
+              </span>
+              <span className="ml-1" id="cart_count">
+                {cartItems.length}
+              </span>
+            </Link>
 
-        <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-          <button className="btn" id="login_btn">
-            Login
-          </button>
+            <div className="ml-4 dropdown d-inline">
+              <Link
+                to="#!"
+                className="btn dropdown-toggle text-white mr-4"
+                type="button"
+                id="dropDownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <figure className="avatar avatar-nav">
+                  <img
+                    src={user.avatar && user.avatar.url}
+                    alt={user && user.name}
+                    className="rounded-circle"
+                  />
+                </figure>
+                <span>{user && user.name}</span>
+              </Link>
 
-          <span id="cart" className="ml-3">
-            Cart
-          </span>
-          <span className="ml-1" id="cart_count">
-            2
-          </span>
-        </div>
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropDownMenuButton"
+              >
+                {user && user.role === "admin" && (
+                  <Link className="dropdown-item" to="/dashboard">
+                    Dashboard
+                  </Link>
+                )}
+                <Link className="dropdown-item" to="/orders/me">
+                  Orders
+                </Link>
+                <Link className="dropdown-item" to="/me">
+                  Profile
+                </Link>
+                <Link
+                  className="dropdown-item text-danger"
+                  to="/"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Link>
+              </div>
+            </div>
+          </div>
+        ) : (
+          !loading && (
+            <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+              <Link to="/login" className="btn ml-4" id="login_btn">
+                Login
+              </Link>
+            </div>
+          )
+        )}
       </nav>
     </Fragment>
   );

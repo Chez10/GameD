@@ -5,12 +5,18 @@ import Loader from "../layout/Loader";
 import MetaData from "../layout/MetaData";
 import { useParams } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
+import { putItemInCart } from "../../actions/cartActions";
 
 const ItemInfo = () => {
   const dispatch = useDispatch();
   const { item } = useSelector((state) => state.gameInfo);
   const loading = useSelector((state) => state.Loading);
   const params = useParams();
+  const { user } = useSelector((state) => state.auth);
+
+  const addToCart = () => {
+    dispatch(putItemInCart(params.id));
+  };
 
   useEffect(() => {
     dispatch(getItemsInfo(params.id));
@@ -22,20 +28,18 @@ const ItemInfo = () => {
         <Loader />
       ) : (
         <Fragment>
+          <MetaData title={item.name} />
           <div className="row f-flex justify-content-around">
-            <div className="col-12 col-lg-5 img-fluid" id="product_image">
-              <Carousel pause="hover">
-                {item.images &&
-                  item.images.map((image) => (
-                    <Carousel.Item key={image.public_id}>
-                      <img
-                        claseName="d-block w-100"
-                        scr={image.url}
-                        alt={item.title}
-                      />
-                    </Carousel.Item>
-                  ))}
-              </Carousel>
+            <div className="col-12 col-lg-7 img-fluid" id="product_image">
+              {item.images &&
+                item.images.map((image) => (
+                  <img
+                    className="card-img mx-auto"
+                    src={item.images[0].play}
+                    width="800"
+                    height="600"
+                  />
+                ))}
             </div>
 
             <div className="col-12 col-lg-5 mt-5">
@@ -55,22 +59,12 @@ const ItemInfo = () => {
               <hr />
 
               <p id="product_price">${item.price}</p>
-              <div className="stockCounter d-inline">
-                <span className="btn btn-danger minus">-</span>
 
-                <input
-                  type="number"
-                  className="form-control count d-inline"
-                  value="1"
-                  readOnly
-                />
-
-                <span className="btn btn-primary plus">+</span>
-              </div>
               <button
                 type="button"
                 id="cart_btn"
-                className="btn btn-primary d-inline ml-4"
+                className="btn btn-primary d-inline"
+                onClick={addToCart}
               >
                 Add to Cart
               </button>

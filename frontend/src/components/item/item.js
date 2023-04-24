@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const item = ({ item }) => {
+const item = ({ item,col }) => {
   return (
-    <div className="col-sm-12 col-md-6 col-lg-3 my-3">
+    <div className={`col-sm-12 col-md-6 col-lg-${col} my-3`}>
       <div className="card p-3 rounded">
         <img className="card-img-top mx-auto" src={item.images[0].url} />
         <div className="card-body d-flex flex-column">
@@ -14,7 +14,7 @@ const item = ({ item }) => {
             <div className="rating-outer">
               <div
                 className="rating-inner"
-                style={{ with: `${(item.ratings / 5) * 100}%` }}
+                style={{ width: `${(item.ratings / 5) * 100}%` }}
               ></div>
             </div>
             <span id="no_of_reviews">({item.numOfReviews} Reviews)</span>
